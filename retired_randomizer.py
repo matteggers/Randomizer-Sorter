@@ -14,7 +14,7 @@ for i in range(len(alphabet)):
     addLetters = random.choice(alphabet)
     dataSet.append(addLetters)
    
-#poppedSet = [] #Declared outside because I need it following the segAlpha function   
+poppedSet = [] #Declared outside because I need it following the segAlpha function       
    
 def segregateAlpha(dataSet):
     soupAlphabet = []
