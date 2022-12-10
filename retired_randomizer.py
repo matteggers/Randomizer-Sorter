@@ -4,7 +4,7 @@ import string
 
 dataSet = []
 
-for i in range (10000):
+for i in range (1000):
      addSet = random.randint(0,100)
      dataSet.append(addSet)
      
@@ -13,48 +13,34 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 for i in range(len(alphabet)):
     addLetters = random.choice(alphabet)
     dataSet.append(addLetters)
+<<<<<<< HEAD:retired_randomizer.py
    
 poppedSet = [] #Declared outside because I need it following the segAlpha function       
    
 def segregateAlpha(dataSet):
     soupAlphabet = []
+=======
+    
+  
+numList = []
+soupAlphabet = []
+evenList = []
+oddList = []
+ 
+def segAll(dataSet):
+>>>>>>> db409ea4621f3926e4e7960fbd25d6533d3854df:randomizer.py
     for i in dataSet:
-        if dataSet.isNumeric(i) == False:
+        if isinstance(i, int): #checks to see if i is an integer
+            numList.append(i)
+        else:
             soupAlphabet.append(i)
-            poppedSet = dataSet.pop(i)
-    soupAlphabet.sort()
-    return soupAlphabet
-print(segregateAlpha(dataSet))   
-
-def sortList(dataSet):
-    evenList = []
-    oddList = []
-    for i in dataSet:
-        if i % 2 == 0: ##if remainder = 0, put in even
+            
+    for i in numList:
+        if i % 2 == 0:
             evenList.append(i)
         else:
             oddList.append(i)
-    evenList.sort(), oddList.sort()
-    return evenList, oddList        
-print(sortList(dataSet))
+    evenList.sort(), oddList.sort(), soupAlphabet.sort()
+    return soupAlphabet, evenList, oddList
+print(segAll(dataSet))
 
-
-
-
-
-
-#def sortList(dataSet):
-#    evenList = []
-#    oddList = []
-#    alphabetSet = []
-#    for i in dataSet:
-#        if str.isdigit(i):
-#            if i % 2 == 0:
-#                evenList.append(i)
-#            else:
-#                oddList.append(i)
-#        else:
-#            alphabetSet.append(i)            
-#    evenList.sort(), oddList.sort(), alphabetSet.sort()
-#    return evenList, oddList, alphabetSet        
-#print(sortList(dataSet))    
