@@ -34,5 +34,19 @@ def segAll(dataSet):
             oddList.append(i)
     evenList.sort(), oddList.sort(), soupAlphabet.sort()
     return soupAlphabet, evenList, oddList
-print(segAll(dataSet))
+
+def printer():
+    print("This is numList!\n")
+    print(numList)
+    print("\n")
+    print("This is alphabetsoup!\n")
+    print(soupAlphabet)
+    print("\n")
+    print("This is evenList\n")
+    print(evenList)
+    print("\n")
+    print("This is oddList!\n")
+    print(oddList)
+
+printer()
 
