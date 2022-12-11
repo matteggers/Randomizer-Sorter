@@ -1,6 +1,7 @@
 import random
 from random import randint
 import string
+import os
 
 dataSet = []
 alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -47,24 +48,27 @@ segAll(dataSet)
 #k = open("oddList.txt", "x")
 #
 #def writer(): #experimental, unsure of status
+#    os.chdir(r"C:\Users\#####\Documents\docTesters")
+#    
 #    fA = open("numList.txt", "a")
-#    f.write(numList)
+#    f.write(','.join(numList))
 #    f.close
 #
 #    gA = open("soupAlphabet.txt", "a")
-#    g.write(soupAlphabet)
+#    g.write(','.join(soupAlphabet))
 #    g.close
 #
 #    hA = open("evenList", "a")
-#    h.write(evenList)
+#    h.write(','.join(evenList))
 #    h.close
 #
 #    kA = open("oddList.txt", "x")
-#    k.write(oddList)
+#    k.write(','.join(oddList))
 #    k.close()
 #
 #    return fA, gA, hA, kA
-
+#
+#writer()
 
 def printer():
     print("This is numList!\n")
