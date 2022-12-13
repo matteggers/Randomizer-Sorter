@@ -1,26 +1,29 @@
 import random
 from random import randint
 import string
+import os
 
 dataSet = []
-
-for i in range (1000):
-     addSet = random.randint(0,100)
-     dataSet.append(addSet)
-     
 alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-for i in range(len(alphabet)):
-    addLetters = random.choice(alphabet)
-    dataSet.append(addLetters)
-    
-  
 numList = []
 soupAlphabet = []
 evenList = []
 oddList = []
- 
+
+for i in range (100):
+     addSet = random.randint(0,100)
+     dataSet.append(addSet)
+     
+for i in range(100): 
+    addLetters = random.choice(alphabet)
+    dataSet.append(addLetters)
+
 def segAll(dataSet):
+    global numList #global allows you to call variable outside of the function
+    global soupAlphabet 
+    global evenList 
+    global oddList 
     for i in dataSet:
         if isinstance(i, int): #checks to see if i is an integer
             numList.append(i)
@@ -32,8 +35,40 @@ def segAll(dataSet):
             evenList.append(i)
         else:
             oddList.append(i)
-    evenList.sort(), oddList.sort(), soupAlphabet.sort()
-    return soupAlphabet, evenList, oddList
+    evenList.sort(), oddList.sort(), soupAlphabet.sort(), numList.sort()
+    return soupAlphabet, evenList, oddList, numList
+
+segAll(dataSet) 
+
+#https://www.w3schools.com/python/python_file_write.asp
+
+#f = open("numList.txt", "x")
+#g = open("soupAlphabet.txt", "x")
+#h = open("evenList", "x")
+#k = open("oddList.txt", "x")
+#
+#def writer(): #experimental, unsure of status
+#    os.chdir(r"C:\Users\#####\Documents\docTesters")
+#    
+#    fA = open("numList.txt", "a")
+#    f.write(','.join(numList))
+#    f.close
+#
+#    gA = open("soupAlphabet.txt", "a")
+#    g.write(','.join(soupAlphabet))
+#    g.close
+#
+#    hA = open("evenList", "a")
+#    h.write(','.join(evenList))
+#    h.close
+#
+#    kA = open("oddList.txt", "x")
+#    k.write(','.join(oddList))
+#    k.close()
+#
+#    return fA, gA, hA, kA
+#
+#writer()
 
 def printer():
     print("This is numList!\n")
@@ -49,4 +84,6 @@ def printer():
     print(oddList)
 
 printer()
+
+#https://www.w3schools.com/python/python_variables_global.asp
 
